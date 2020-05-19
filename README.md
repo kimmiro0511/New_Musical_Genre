@@ -10,7 +10,7 @@
 
 ### Goals
 뮤지컬 작품의 핵심요소를 텍스트 분석을 통해 파악하여 문학적 장르(fantasy, history, romance, social, thriller)로 구분한다. 또한, 분류된 장르를 시각화하는 방법에 대해 연구한다.
-학습 데이터는 약 2500개로 Link: [CMU Movie Summary Corpus][link] [link]: http://www.cs.cmu.edu/~ark/personas/ "Go CMU Movie Summary Corpus"
+학습 데이터는 약 2500개로[CMU Movie Summary Corpus]( http://www.cs.cmu.edu/~ark/personas/, "Go CMU Movie Summary Corpus")
 
 Play DB 홈페이지에서 크롤링한 시놉시스와 줄거리를 기반으로 한다. Konlpy와 NLTK 패키지를 이용해 전처리하여 유의미한 데이터만 추출해 json 파일에 데이터셋을 구축한다.
 2500개의 데이터 중 일부분을 그룹화하여 word2vec과 RNN을 이용하여 데이터를 분석하여 장르별 대표 사전을 만든 후 장르를 태깅한다. 
