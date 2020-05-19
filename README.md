@@ -26,6 +26,15 @@
 - 장르 검증 : k-fold 교차 검증
 - 장르 시각화 : matplot, Seaborn 패키지를 통한 시각화
 
+## Model
+- 데이터 수집 : [CMU Movie Summary Corpus][CMU]의 Detaset  42,306개, 뮤지컬 줄거리 255개
+- 데이터 전처리 : Detaset 토큰화, 불용어 처리 후 정수 인코딩
+- 데이터 분석 :  의사결정나무 모델, RNN, k-nearest neighbor < 연구중
+- 데이터 검증 : k-fold 교차검증을 활용하여 장르별 정확도를 확인
+- 데이터 시각화 : 분석된 장르를 장르 단어 분포도로 시각화한다.
+
+
+
 ## Schedule
 
 __3월__
