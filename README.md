@@ -29,24 +29,45 @@
 ## Model
 - 데이터 수집 : [CMU Movie Summary Corpus][CMU]의 Detaset  42,306개, 뮤지컬 줄거리 307개
 - 데이터 전처리 : Detaset 토큰화, 불용어 처리 후 정수 인코딩
-- 데이터 분석 :  lstn
+- 데이터 분석 :  lstm
 - 데이터 검증 : k-fold 교차검증을 활용하여 장르별 정확도를 확인
 - 데이터 시각화 : 분석된 뮤지컬 데이터를 장르 단위로 시각화한다.
 
+- ###데이터 
+  ```from tqdm import tqdm
+  all_vocab = {} 
+  all_sentences = []
+  stop_words = set(stopwords.words('english'))
+  
+  for i in tqdm(allplot):
+      all_sentences = word_tokenize(str(i)) # 단어 토큰화를 수행합니다.
+      result = []
+      for word in all_sentences: 
+          word = word.lower() # 모든 단어를 소문자화하여 단어의 개수를 줄입니다.
+          if word not in stop_words: # 단어 토큰화 된 결과에 대해서 불용어를 제거합니다.
+              if len(word) > 2: # 단어 길이가 2이하인 경우에 대하여 추가로 단어를 제거합니다.
+                  result.append(word)
+                  if word not in all_vocab:
+                      all_vocab[word] = 0 
+                  all_vocab[word] += 1
+      all_sentences.append(result) 
+    
+  all_vocab_sorted = sorted(all_vocab.items(), key = lambda x:x[1], reverse = True)
 
-
-## Schedule
-
-__3월__
-  - 주제 선정   
-     
-__4월__
-  - 뮤지컬 줄거리 웹 크롤링
-  - 테스트 데이터 라벨링   
-     
-__5월__
-  - 데이터 전처리
-    + 토큰화
-    + 라벨링
-
-
+  all_word_to_index = {}
+  i=0
+  for (word, frequency) in all_vocab_sorted :
+      if frequency > 1 : # 빈도수가 적은 단어는 제외한다.
+          i=i+1
+          all_word_to_index[word] = i
+  vocab_size = 15000 #상위 15000개 단어만 사용
+  words_frequency = [w for w,c in all_word_to_index.items() if c >= vocab_size + 1] # 인덱스가 15000 초과인 단어 제거
+  for w in words_frequency:
+      del all_word_to_index[w] # 해당 단어에 대한 인덱스 정보를 삭제  
+  all_word_to_index['OOV'] = len(all_word_to_index) + 1
+  ```
+### 영화 데이터
+- **영화 데이터 크롤링**<br>
+    7가지의 감정을 잘 예측하였는지 확인하기 위한 test set으로서 영화 리뷰 데이터를 활용하였다. 
+    그 이유는 영화 리뷰는 영화를 본 후 감상평을 적는 것이기 때문에 사람들의 7가지 감정이 잘 녹아들어 있을 거라 판단했기 때문이다.<br>
+ 
