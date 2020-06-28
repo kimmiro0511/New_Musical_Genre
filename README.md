@@ -1,6 +1,6 @@
 # New_Musical_Genre
 
-본 연구는 경희대학교 "데이터분석캡스톤디자인" 수업에서 진행되었습니다.
+본 연구는 경희대학교 "데이터분석캡스톤디자인" 수업에서 진행되었습니다.https://github.com/kimmiro0511/New_Musical_Genre/edit/master/README.md
 
 [CMU]: http://www.cs.cmu.edu/~ark/personas/ "Go CMU Movie Summary Corpus"
 
@@ -107,8 +107,8 @@
 
 다중 분류를 위해 순환 신경망 모델을 사용했습니다.  
 * LSTM 모델 구현 소스코드 (자세한 설명은 주석 처리했습니다.) 
-```
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+```from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
@@ -136,6 +136,7 @@ Y_test = np.array(Y_test)
 
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['acc'])
 model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=7, batch_size=64, callbacks=[es, mc])
+
 ```
     
  뮤지컬 데이터로 테스트 결과 많은 뮤지컬 작품이 로맨스로 분류된 것을 확인하였고, 스릴러가 가장 적은 비율로 분류된것을 확인했습니 다.  
