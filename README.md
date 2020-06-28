@@ -62,7 +62,8 @@
 * 전처리 소스코드 일부 (자세한 내용은 주석처리했습니다.) 
  
  
-  ```from tqdm import tqdm
+  ```
+  from tqdm import tqdm
   all_vocab = {} 
   all_sentences = []
   stop_words = set(stopwords.words('english'))
@@ -106,7 +107,8 @@
 
 다중 분류를 위해 순환 신경망 모델을 사용했습니다.  
 * LSTM 모델 구현 소스코드 (자세한 설명은 주석 처리했습니다.) 
-```from tensorflow.keras.preprocessing.sequence import pad_sequences
+```
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
@@ -149,12 +151,10 @@ model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=7, batch_si
 프로젝트 진행 초반에는 한글 줄거리로 국내 뮤지컬 장르를 분류하고자 했습니다. 하지만 국내 뮤지컬 줄 거리의 대부분은 홍보용으로 내용에 대한 설명이 부실한 경우가 많아 분석에 어려움이 있었습니다. 충분한 한국어 뮤지컬 줄거리 데이터를 구하지 못해 영어 자연어처리로 주제가 변경된 부분이 아쉽습니다
 
 ###  역할 분담 
-양윤지 : 
- 영화 데이터 수집&정리, 줄거리 데이터 장르 재태깅, Train,Test데이터 시각화&패딩, LSTM모델구현, 시각화 
+양윤지 :  영화 데이터 수집&정리, 줄거리 데이터 장르 재태깅, Train,Test데이터 시각화&패딩, LSTM모델구현, 시각화 
  
  
-김서영 :  
-뮤지컬 데이터 수집&정리, 장르 데이터 전처리, Train,Test데이터 인코딩, LSTM모델로 학습, 테스트 데이터 학
+김서영 :  뮤지컬 데이터 수집&정리, 장르 데이터 전처리, Train,Test데이터 인코딩, LSTM모델로 학습, 테스트 데이터 학
 습, 뮤지컬 데이터 분류,  
  
 시연 영상 링크 : https://youtu.be/EKjjQ0tHM4s
