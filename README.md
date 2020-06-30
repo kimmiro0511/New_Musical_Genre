@@ -1,6 +1,7 @@
 # New_Musical_Genre
 
-본 연구는 경희대학교 "데이터분석캡스톤디자인" 수업에서 진행되었습니다.https://github.com/kimmiro0511/New_Musical_Genre/edit/master/README.md
+본 연구는 경희대학교 "데이터분석캡스톤디자인" 수업에서 진행되었습니다.
+진행상황 : khuhub - http://khuhub.khu.ac.kr/2018102098/data
 
 [CMU]: http://www.cs.cmu.edu/~ark/personas/ "Go CMU Movie Summary Corpus"
 
