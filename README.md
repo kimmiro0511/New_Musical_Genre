@@ -156,7 +156,6 @@ model.fit(X_train, Y_train, validation_data=(X_test, Y_test), epochs=7, batch_si
 양윤지 :  영화 데이터 수집&정리, 줄거리 데이터 장르 재태깅, Train,Test데이터 시각화&패딩, LSTM모델구현, 시각화 
  
  
-김서영 :  뮤지컬 데이터 수집&정리, 장르 데이터 전처리, Train,Test데이터 인코딩, LSTM모델로 학습, 테스트 데이터 학
-습, 뮤지컬 데이터 분류,  
+김서영 :  뮤지컬 데이터 수집&정리, 장르 데이터 전처리, Train,Test데이터 인코딩, LSTM모델 구현 및 학습, 테스트 데이터 학습, 뮤지컬 데이터 분류
  
 시연 영상 링크 : https://youtu.be/EKjjQ0tHM4s
