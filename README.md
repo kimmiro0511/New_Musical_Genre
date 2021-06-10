@@ -63,7 +63,7 @@
 * 전처리 소스코드 일부 (자세한 내용은 주석처리했습니다.) 
  
  
-  ```
+  ```python
   from tqdm import tqdm
   all_vocab = {} 
   all_sentences = []
@@ -109,7 +109,8 @@
 다중 분류를 위해 순환 신경망 모델을 사용했습니다.  
 * LSTM 모델 구현 소스코드 (자세한 설명은 주석 처리했습니다.) 
 
-```from tensorflow.keras.preprocessing.sequence import pad_sequences
+```python
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM, Embedding
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
